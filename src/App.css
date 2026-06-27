@@ -424,3 +424,63 @@ button { cursor: pointer; border: none; outline: none; font-family: inherit; }
   .btn-lg { font-size: 15px; padding: 12px 28px; }
   .score-number { font-size: 56px; }
 }
+
+/* ── Block Grid (Home) ────────────────────────────────────── */
+.blocks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+.block-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--block-color, var(--accent));
+  border-radius: var(--radius);
+  padding: 18px;
+  transition: border-color .15s, background .15s;
+}
+.block-card:hover { background: var(--surface2); }
+.block-header {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 10px;
+}
+.block-name { font-size: 15px; font-weight: 600; color: var(--text); }
+.block-count { font-size: 12px; color: var(--text2); }
+.block-progress { margin-bottom: 12px; }
+.block-bar {
+  height: 4px; background: var(--surface2);
+  border-radius: 2px; overflow: hidden; margin-bottom: 4px;
+}
+.block-bar-fill {
+  height: 100%; background: var(--block-color, var(--accent));
+  border-radius: 2px; transition: width .3s ease;
+}
+.block-progress-label { font-size: 11px; color: var(--text2); }
+.block-actions { display: flex; gap: 8px; }
+.btn-block-primary {
+  flex: 1; background: var(--block-color, var(--accent)); color: #fff;
+  padding: 9px 16px; border-radius: 6px;
+  font-size: 13px; font-weight: 600;
+  transition: opacity .15s;
+}
+.btn-block-primary:hover { opacity: .85; }
+.btn-block-ghost {
+  background: none; color: var(--text2);
+  border: 1px solid var(--border);
+  padding: 9px 14px; border-radius: 6px;
+  font-size: 13px;
+  transition: color .15s, border-color .15s;
+}
+.btn-block-ghost:hover { color: var(--text); border-color: var(--text2); }
+.header-block {
+  font-size: 13px; color: var(--text2); font-weight: 500;
+  margin-left: 8px;
+}
+.results-block-label {
+  text-align: center; font-size: 13px;
+  color: var(--text2); font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase;
+  margin-bottom: 16px;
+}
